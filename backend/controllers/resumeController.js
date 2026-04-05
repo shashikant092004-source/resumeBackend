@@ -11,8 +11,25 @@ const browserCandidates = [
   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
 ];
 
-const getBrowserPath = () =>
-  browserCandidates.find((browserPath) => fs.existsSync(browserPath));
+const getBrowserPath = () => {
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+    return process.env.PUPPETEER_EXECUTABLE_PATH;
+  }
+
+  const localBrowserPath = browserCandidates.find((browserPath) =>
+    fs.existsSync(browserPath),
+  );
+
+  if (localBrowserPath) {
+    return localBrowserPath;
+  }
+
+  try {
+    return puppeteer.executablePath();
+  } catch {
+    return "";
+  }
+};
 
 // ✅ Create Resume Controller
 exports.createResume = async (req, res) => {
@@ -191,7 +208,8 @@ exports.downloadResume = async (req, res) => {
 
     if (!executablePath) {
       return res.status(500).json({
-        message: "Chrome or Edge browser not found for PDF generation",
+        message:
+          "No browser executable found for PDF generation. Set PUPPETEER_EXECUTABLE_PATH or install Puppeteer's bundled browser.",
       });
     }
 

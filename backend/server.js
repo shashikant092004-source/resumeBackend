@@ -12,6 +12,10 @@ dotenv.config({ path: path.join(__dirname, ".env") });
 
 const app = express();
 
+const port = process.env.PORT || 5000;
+const liveBaseUrl =
+  process.env.PUBLIC_BASE_URL || "https://resumebackend-1-v08r.onrender.com";
+
 // Swagger definition
 const swaggerDefinition = {
   openapi: "3.0.0",
@@ -22,7 +26,11 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: `http://localhost:${process.env.PORT || 5000}`,
+      url: liveBaseUrl,
+      description: "Production server",
+    },
+    {
+      url: `http://localhost:${port}`,
       description: "Development server",
     },
   ],
@@ -51,7 +59,7 @@ app.use("/api", userRoutes);
 app.use("/api", resumeRouts);
 
 // Start Server after DB connect
-const PORT = process.env.PORT || 5000;
+const PORT = port;
 
 connectDB().then(() => {
   app.listen(PORT, () => {

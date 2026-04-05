@@ -12,7 +12,10 @@ const browserCandidates = [
 ];
 
 const getBrowserPath = () => {
-  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+  if (
+    process.env.PUPPETEER_EXECUTABLE_PATH &&
+    fs.existsSync(process.env.PUPPETEER_EXECUTABLE_PATH)
+  ) {
     return process.env.PUPPETEER_EXECUTABLE_PATH;
   }
 

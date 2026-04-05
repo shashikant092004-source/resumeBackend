@@ -103,6 +103,12 @@ exports.getResumes = async (req, res) => {
       });
     }
 
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({
+        message: "Invalid userId. Please provide a valid MongoDB ObjectId.",
+      });
+    }
+
     // ✅ sirf us user ka data
     const resumes = await Resume.find({ user: userId }).populate(
       "user",

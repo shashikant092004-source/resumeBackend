@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{FULL_NAME}} Resume</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #1f2937;
+      background: #f3f4f6;
+      padding: 24px;
+    }
+
+    .resume {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      padding: 36px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      border-bottom: 3px solid #111827;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+
+    .header-content {
+      flex: 1;
+    }
+
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      color: #111827;
+    }
+
+    .contact {
+      font-size: 14px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    .profile-image-wrap {
+      flex-shrink: 0;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 3px solid #e5e7eb;
+      display: block;
+      background: #f9fafb;
+    }
+
+    .section {
+      margin-top: 22px;
+    }
+
+    .section h2 {
+      font-size: 17px;
+      margin: 0 0 12px;
+      color: #111827;
+      border-bottom: 1px solid #d1d5db;
+      padding-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .item {
+      margin-bottom: 14px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .item-subtitle {
+      color: #374151;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .muted {
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .summary,
+    .description {
+      color: #374151;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-block;
+      background: #e5e7eb;
+      color: #111827;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .empty {
+      color: #6b7280;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <header class="header">
+      <div class="header-content">
+        <h1>{{FULL_NAME}}</h1>
+        <div class="contact">
+          {{CONTACT_LINE_1}}
+          <br />
+          {{CONTACT_LINE_2}}
+        </div>
+      </div>
+      {{PROFILE_IMAGE}}
+    </header>
+
+    <section class="section">
+      <h2>Professional Summary</h2>
+      <div class="summary">{{SUMMARY}}</div>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      {{EDUCATION_ITEMS}}
+    </section>
+
+    <section class="section">
+      <h2>Experience</h2>
+      {{EXPERIENCE_ITEMS}}
+    </section>
+
+    <section class="section">
+      <h2>Skills</h2>
+      {{SKILLS_ITEMS}}
+    </section>
+
+    <section class="section">
+      <h2>Projects</h2>
+      {{PROJECT_ITEMS}}
+    </section>
+
+    <section class="section">
+      <h2>Certifications</h2>
+      {{CERTIFICATION_ITEMS}}
+    </section>
+
+    <section class="section">
+      <h2>Languages</h2>
+      {{LANGUAGE_ITEMS}}
+    </section>
+  </main>
+</body>
+</html>

@@ -38,7 +38,7 @@ const swaggerDefinition = {
 
 const options = {
   swaggerDefinition,
-  apis: ["./routes/*.js"], // paths to files containing OpenAPI definitions
+  apis: [path.join(__dirname, "routes", "*.js")], // use absolute path so deployed environments can find route annotations
 };
 
 const specs = swaggerJsdoc(options);

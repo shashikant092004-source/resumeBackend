@@ -1,0 +1,238 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ===== GLASS EFFECT CONTAINER ===== */
+.auth-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.auth-box h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ===== INPUT ===== */
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.auth-box input::placeholder {
+  color: #eee;
+}
+
+/* ===== BUTTON ===== */
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== SWITCH BUTTON ===== */
+.btn_wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== HEADER ===== */
+.part1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.part1 h1 {
+  color: white;
+  font-size: 2.2rem;
+}
+
+.part1 p {
+  color: #ddd;
+}
+
+/* ===== TEMPLATE GRID ===== */
+.template-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===== CARD (PREMIUM UI) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 20px;
+  height: 450px;
+  overflow-y: auto;
+  cursor: pointer;
+  transition: 0.4s ease;
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Active */
+.card.active {
+  border: 2px solid #ff7eb3;
+  box-shadow: 0 0 25px rgba(255, 126, 179, 0.7);
+}
+
+/* ===== SCROLLBAR ===== */
+.card::-webkit-scrollbar {
+  width: 5px;
+}
+.card::-webkit-scrollbar-thumb {
+  background: #ff7eb3;
+  border-radius: 10px;
+}
+
+/* ===== CONTENT DESIGN ===== */
+
+/* Name */
+.card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+/* Email */
+.card p {
+  font-size: 13px;
+  color: #eee;
+  margin-bottom: 8px;
+}
+
+/* Section Title */
+.card h3 {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #ffdfdf;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 3px;
+}
+
+/* Education / Project text */
+.card small {
+  font-size: 12px;
+  color: #ddd;
+}
+
+/* Skills */
+.skill {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 3px;
+  font-size: 12px;
+}
+
+/* Divider */
+.card hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 8px 0;
+}
+
+/* Scrollbar (modern) */
+.card::-webkit-scrollbar {
+  width: 5px;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #ff7eb3;
+  border-radius: 10px;
+}
+
+/* ===== BUTTON ===== */
+.view-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== SMALL TEXT ===== */
+h3,
+h4 {
+  margin-top: 10px;
+}
+
+hr {
+  margin: 10px 0;
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}

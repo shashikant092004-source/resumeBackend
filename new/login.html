@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="formTitle">Sign Up</h1>
+
+        <!-- Signup Form -->
+        <form id="signupForm">
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="email" id="signupEmail" placeholder="Enter Email" required>
+            <input type="password" id="signupPassword" placeholder="Create Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- Login Form -->
+        <form id="loginForm" style="display: none;">
+            <input type="email" id="loginEmail" placeholder="Enter Email" required>
+            <input type="password" id="loginPassword" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="btn_wrappper">
+            <button class="btn" onclick="showSignup()">Register</button>
+            <button class="btn" onclick="showLogin()">Login</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+
+    <button id="logoutBtn" onclick="logout()" style="display: none;">Logout</button>
+    <script>
+        const token = localStorage.getItem("token");
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        // ✅ Show logout button only if token exists
+        if (token) {
+            logoutBtn.style.display = "block";
+            window.location.href = "home.html";
+        } else {
+            logoutBtn.style.display = "none";
+        }
+
+        function logout() {
+            localStorage.removeItem("token");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+
+</html>
